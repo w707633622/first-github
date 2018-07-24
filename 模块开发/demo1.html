@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		
+		<script>
+			var foo = (function(){
+				var cont = 0;
+				var m1 = function(){
+					console.log(cont++);
+				}
+				var m2 = function(){
+					console.log(cont++);
+				}
+				return {
+					m1:m1,
+					m2:m2
+				}
+			})();
+			var foo =(function(fo){
+				fo.m3 = function(){
+					console.log(123);
+				}
+				return fo;
+			})(foo);
+			foo.m1();
+			foo.m2();
+			foo.m3();
+		</script>
+	</body>
+</html>
